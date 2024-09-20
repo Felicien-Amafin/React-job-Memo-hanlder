@@ -1,0 +1,12 @@
+
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    color: white;
+    background-color: rgb(18, 113, 191);
+}
+
+header h1 {
+    font-size: 24px;
+}

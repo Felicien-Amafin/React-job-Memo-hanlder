@@ -1,6 +1,8 @@
-export default function NewMemo({onCreate}) {
+import CreateMemoBtn from "./CreateMemoBtn"
+
+export default function NewMemo({onNewMemo}) {
     return <>
         <p>Create a new memo or select an option in menu</p>
-        <button onClick={onCreate}>Create new memo</button>
+        <CreateMemoBtn onNewMemo={onNewMemo}/>
     </>
 }

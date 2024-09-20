@@ -1,6 +1,6 @@
-export default function JobMemoWidget({companyName, jobName}) {
-    return <div>
-        <h3>{companyName}</h3>
-        <p>{jobName}</p>
-    </div>
+export default function JobMemoWidget({memo, onDisplay}) {
+    return <button onClick={()=> {onDisplay(memo)}}>
+        <h3>{memo.companyName}</h3>
+        <p>{memo.jobName}</p>
+    </button>
 }
