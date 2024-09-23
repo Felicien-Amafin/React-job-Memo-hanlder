@@ -1,3 +1,105 @@
-.nav {
+.navContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 70px;
     position: fixed;
+    inset: 70px 0 0 0;
+    padding: 60px 40px 40px 40px;
+    border-top: 1px solid rgba(207, 203, 203, 0.217);
+    background-color: rgb(26, 30, 50);
+}
+
+.navContainer button {
+    font-family: "Prompt", system-ui;
+    cursor: pointer;
+    color: rgb(189, 187, 187);
+    font-size: 0.875rem;
+    font-weight: 300;
+    border: none;
+    background-color: transparent;
+}
+
+.navContainer .createBtn {
+    font-size: 1rem;
+}
+
+.navContainer button:hover {
+    color: white;
+}
+
+.navContainer .btnPlusIcon {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.navContainer nav {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+}
+
+nav h2 {
+    text-align: center;
+    font-size: 1.125rem;
+    font-weight: 400;
+    color: white;
+}
+
+nav ul {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+ul ol {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 40px;
+}
+
+.createIcon {
+    color: white;
+    font-size: 1rem;
+}
+
+.awaitingRes {
+    color: rgb(26, 95, 242);
+}
+
+.positiveRes {
+    color: rgb(6, 158, 6);
+}
+
+.negativeRes {
+    color: rgb(244, 27, 27);
+}
+
+.noRes {
+    color: white;
+}
+
+ol li { 
+    list-style: none;
+}
+
+.visible { visibility: visible; }
+
+.hidden { visibility: hidden; }
+
+@media screen and (min-width: 768px) {
+    .navContainer { 
+        border-top: none;
+        position: static;
+        visibility: visible;
+    }
 }

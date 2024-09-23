@@ -1,0 +1,34 @@
+.flex {
+    display: flex;
+}
+
+.headerBlock {
+    justify-content: space-between;
+}
+
+.headerBlock h1 {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.headerBlock .h1PlusIcon {
+    gap: 10px;
+    align-items: center;
+    color: white;
+}
+
+.headerBlock button {
+    font-size: 18px;
+    font-weight: 400;
+    background-color: transparent;
+    border: none;
+    color: white;
+}
+
+@media screen and (min-width: 768px) {
+    .headerBlock button {
+        position: fixed;
+        visibility: hidden;
+    }
+}
+

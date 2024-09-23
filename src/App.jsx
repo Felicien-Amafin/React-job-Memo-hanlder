@@ -1,7 +1,8 @@
 import { useState } from 'react'
 import DisplayPart from './components/DisplayPart';
-import Header from './components/Header';
-import './App.css'
+import HeaderBlock from './components/HeaderBlock';
+import Nav from './components/Nav';
+import './App.css';
 
 export default function App() {
   const [displayMode, setDisplayMode] = useState('');
@@ -11,7 +12,8 @@ export default function App() {
       negativeRes: [],
       noRes: []
   });
-  
+  const [isNavVisible, setIsNavVisible] = useState(false);
+
   function handleNewMemo() {
     //Create new memo
     setDisplayMode({mode:'create'})
@@ -116,6 +118,12 @@ export default function App() {
     setDisplayMode({mode: 'list', listName: listName});
   }
 
+  function handleNav() {
+    setIsNavVisible((prevState)=> {
+      return !prevState;
+    })
+  }
+
   const memoFunc = {
     newMemo: handleNewMemo,
     saveNewMemo: handleSave,
@@ -128,20 +136,29 @@ export default function App() {
   const nav = {
     newMemo: handleNewMemo,
     onList: handleList,
+    onNav: handleNav,
     lists: lists
   }
 
   return <>
-    <Header
-      h1="My job Memo"
-      nav={nav}
-    />
-    <DisplayPart
-      displayMode={displayMode}
-      lists={lists}
-      memoFunc={memoFunc}
-      onList={handleList}
-    />
+    <header>
+      <HeaderBlock
+        h1="My JobMemo"
+        onNav={handleNav}
+      />
+      <Nav 
+        isVisible={isNavVisible}
+        nav={nav}
+      />
+    </header>
+    <main>
+      <DisplayPart
+        displayMode={displayMode}
+        lists={lists}
+        memoFunc={memoFunc}
+        onList={handleList}
+      />
+    </main>
   </>
 }
 

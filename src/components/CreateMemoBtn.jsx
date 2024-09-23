@@ -1,10 +1,16 @@
-export default function CreateMemoBtn({onNewMemo}) {
+export default function CreateMemoBtn({text, classN, onNewMemo, onNav}) {
+    function handleClick(onNewMemo, onNav) {
+        onNewMemo();
+
+        if(onNav) { onNav(); }
+    }
+
     return(
-        <button 
+        <button className={classN}
             type="button"
-            onClick={ ()=> { onNewMemo() } }
+            onClick={ ()=> { handleClick(onNewMemo, onNav) } }
         >
-        Create new memo
+        {text}
         </button>
     )
 }

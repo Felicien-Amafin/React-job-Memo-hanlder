@@ -3,9 +3,11 @@ import JobMemoForm from "./JobMemoForm";
 import JobMemoWidget from "./JobMemoWidget";
 import JobMemoOnHold from "./JobMemoOnHold";
 import JobMemo from "./JobMemo";
+import classes from "./DisplayPart.module.css";
 
 export default function DisplayPart({displayMode, lists, memoFunc, onList}) {
     let uiContent;
+    let classN;
 
     if(displayMode === '') { 
         uiContent = <NewMemo onNewMemo={memoFunc.newMemo}/> 
@@ -42,9 +44,12 @@ export default function DisplayPart({displayMode, lists, memoFunc, onList}) {
                         />
         }
     }
-    
-    return <main>
-        <section>
+
+    if(displayMode.mode === 'create' || displayMode.mode === 'memo') {
+        classN = classes.container;
+    }
+
+    return <section className={classN}>
             {uiContent.length > 0 ? uiContent.map((memo)=> {
                 return <JobMemoWidget 
                             key={memo.id}
@@ -53,6 +58,4 @@ export default function DisplayPart({displayMode, lists, memoFunc, onList}) {
                         />
             }) : uiContent}
         </section>
-    </main>
-    
 }
