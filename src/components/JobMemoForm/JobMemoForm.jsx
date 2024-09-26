@@ -42,7 +42,7 @@ export default function JobMemoForm({onSave, onCancel}) {
     
     return <form 
                 style={{padding: 20}} 
-                className={`${winClasses.window} ${winClasses.flex} ${classes.formMemo} `}
+                className={`${winClasses.window} ${winClasses.flex}`}
             >
         <ol className={`${winClasses.flex} ${winClasses.inputContainer} `}>
             <Input 
@@ -62,7 +62,7 @@ export default function JobMemoForm({onSave, onCancel}) {
             />
         </ol>
         {error && <p className={winClasses.errorMess}>Fill empty fields.</p>}
-        <div className={`${winClasses.btnContainer} ${classes.btnSavePlusCancel}`}>
+        <div className={`${winClasses.btnContainer}`}>
             <button 
                 className={`${winClasses.btn} ${winClasses.btnStyle}`} 
                 onClick={handleSave}
