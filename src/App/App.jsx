@@ -1,7 +1,7 @@
 import { useState } from 'react'
-import DisplayPart from './components/DisplayPart';
-import HeaderBlock from './components/HeaderBlock';
-import Nav from './components/Nav';
+import DisplayPart from '../components/DisplayPart/DisplayPart';
+import HeaderBlock from '../components/HeaderBlock/HeaderBlock';
+import Nav from '../components/Nav/Nav';
 import './App.css';
 
 export default function App() {

@@ -1,0 +1,23 @@
+.onHold {
+    padding: 40px;
+    font-family: "Work Sans", sans-serif;
+}
+
+.comment {
+    height: 80px;
+}
+
+.classification {
+    height: 35px;
+}
+
+.btnBox {
+    list-style: none;
+    min-height: 40px;
+    flex-grow: 1;
+}
+
+.btn {
+    width: 100%;
+    height: 100%;
+}

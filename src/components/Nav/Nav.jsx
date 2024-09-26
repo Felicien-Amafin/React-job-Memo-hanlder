@@ -1,13 +1,13 @@
-import CreateMemoBtn from "./CreateMemoBtn";
+import CreateMemoBtn from "../CreateMemoBtn/CreateMemoBtn";
 import classes from "./Nav.module.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faClockRotateLeft, faThumbsUp, faThumbsDown, faCommentSlash, faCirclePlus } from '@fortawesome/free-solid-svg-icons';
 
 export default function Nav({nav, isVisible}) {
     const btns = [
-        {name: 'Awaiting responses', listName: 'awaitingRes', icon: faClockRotateLeft}, 
-        {name: 'Positive responses', listName: 'positiveRes', icon: faThumbsUp}, 
-        {name: 'Negative responses', listName: 'negativeRes', icon: faThumbsDown}, 
+        {name: 'Awaiting', listName: 'awaitingRes', icon: faClockRotateLeft}, 
+        {name: 'Positive', listName: 'positiveRes', icon: faThumbsUp}, 
+        {name: 'Negative', listName: 'negativeRes', icon: faThumbsDown}, 
         {name: 'No response', listName: 'noRes', icon: faCommentSlash}
     ];
     

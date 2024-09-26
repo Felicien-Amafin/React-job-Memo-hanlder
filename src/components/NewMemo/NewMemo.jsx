@@ -1,4 +1,4 @@
-import CreateMemoBtn from "./CreateMemoBtn"
+import CreateMemoBtn from "../CreateMemoBtn/CreateMemoBtn";
 import classes from './NewMemo.module.css';
 
 export default function NewMemo({onNewMemo}) {

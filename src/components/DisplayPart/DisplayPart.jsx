@@ -1,13 +1,13 @@
-import NewMemo from "./NewMemo";
-import JobMemoForm from "./JobMemoForm";
-import JobMemoWidget from "./JobMemoWidget";
-import JobMemoOnHold from "./JobMemoOnHold";
-import JobMemo from "./JobMemo";
+import NewMemo from "../NewMemo/NewMemo";
+import JobMemoForm from "../JobMemoForm/JobMemoForm";
+import JobMemoWidget from "../JobMemoWidget/JobMemoWidget";
+import JobMemoOnHold from "../JobMemoOnHold/JobMemoOnHold";
+import JobMemo from "../JobMemo/JobMemo";
 import classes from "./DisplayPart.module.css";
 
 export default function DisplayPart({displayMode, lists, memoFunc, onList}) {
     let uiContent;
-    let classN;
+    let title;
 
     if(displayMode === '') { 
         uiContent = <NewMemo onNewMemo={memoFunc.newMemo}/> 
@@ -18,17 +18,24 @@ export default function DisplayPart({displayMode, lists, memoFunc, onList}) {
                         onSave={memoFunc.saveNewMemo} 
                         onCancel={memoFunc.cancelNewMemo}
                     />
+        title = "New memo";
     }
 
     if(displayMode.mode === 'list') {
         const listName = displayMode.listName;
         uiContent = lists[listName].length > 0 ? lists[listName] : <p>List is empty</p>;
+        
+        if(listName === 'awaitingRes') { title = 'Awaiting responses' }
+        if(listName === 'positiveRes') { title = 'Positive responses'}
+        if(listName === 'negativeRes') { title = 'Negative responses'}
+        if(listName === 'noRes') { title = 'No responses'}
     }
 
     if(displayMode.mode === 'memo') { 
         const memo = displayMode.memoData;
         const memoType = displayMode.memoData.type;
-       
+        title = memoType === 'onHold' ? 'Memo on hold' : 'Memo';
+
         uiContent = <JobMemo 
                         memo={memo}
                         onDelete={memoFunc.deleteMemo}
@@ -44,12 +51,18 @@ export default function DisplayPart({displayMode, lists, memoFunc, onList}) {
                         />
         }
     }
-
-    if(displayMode.mode === 'create' || displayMode.mode === 'memo') {
-        classN = classes.container;
-    }
-
-    return <section className={classN}>
+    
+    return <section 
+                className={uiContent.length > 0 ? 
+                    `${classes.display} ${classes.list}` : 
+                    `${classes.display} ${classes.generic}`
+                }
+            >
+            <h2 
+                className={classes.title}
+            >
+            {title}
+            </h2>
             {uiContent.length > 0 ? uiContent.map((memo)=> {
                 return <JobMemoWidget 
                             key={memo.id}
@@ -57,5 +70,5 @@ export default function DisplayPart({displayMode, lists, memoFunc, onList}) {
                             onDisplay={memoFunc.displayMemo}
                         />
             }) : uiContent}
-        </section>
+    </section>
 }

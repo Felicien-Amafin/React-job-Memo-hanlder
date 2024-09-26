@@ -3,10 +3,12 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    overflow-y: scroll;
     gap: 70px;
     position: fixed;
+    z-index: 4000;
     inset: 70px 0 0 0;
-    padding: 60px 40px 40px 40px;
+    padding: 70px 40px 0 40px;
     border-top: 1px solid rgba(207, 203, 203, 0.217);
     background-color: rgb(26, 30, 50);
 }
@@ -101,5 +103,6 @@ ol li {
         border-top: none;
         position: static;
         visibility: visible;
+        overflow-y: auto;
     }
 }

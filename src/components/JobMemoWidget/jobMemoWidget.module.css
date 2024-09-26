@@ -1,0 +1,25 @@
+.widget {
+    width: 100%;
+    max-width: 250px;
+    height: 200px;
+    background-color: white;
+    border-radius: 7px;
+    box-shadow: 0px 0px 10px 5px rgb(216, 216, 216);
+    padding: 20px;
+    justify-content: center;
+    border: none;
+    cursor: pointer;
+}
+
+.widget:hover {
+    background-color: rgb(247, 247, 247);
+}
+
+.widget .company {
+    margin-bottom: 20px;
+    color: rgb(92, 91, 91);
+}
+
+.widget .job {
+    color: grey;
+}

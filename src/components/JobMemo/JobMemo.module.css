@@ -1,0 +1,13 @@
+.memo {
+    padding: 40px;
+}
+
+.comment {
+    font-size: 0.875rem;
+    text-align: center;
+}
+
+.btnContainer {
+    grid-template-columns: repeat(2, 1fr);
+}
+

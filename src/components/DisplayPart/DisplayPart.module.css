@@ -1,0 +1,37 @@
+.display {
+    width: 100%;
+    min-height: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.generic {
+    align-items: center; 
+    min-height: 100%;
+    flex-grow: 1;
+}
+
+.list {
+    flex-wrap: wrap;
+    padding-top: 100px;
+    margin: 0 auto;
+    gap: 15px;
+}
+
+.title {
+    position: absolute;
+    top: 0;
+    font-size: 0.875rem;
+    font-weight: 600;
+    font-family: "Work Sans", sans-serif;
+    color: rgb(121, 125, 147);
+} 
+
+@media screen and (min-width: 768px) {
+    .title {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+    }
+}
